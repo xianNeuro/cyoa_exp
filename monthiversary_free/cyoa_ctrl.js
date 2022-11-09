@@ -10059,11 +10059,11 @@ function ChangeInstructionsScreen(buttonText, buttonFunction, incremVal) {
   $('#buttonGroup').hide()
   if (enableInstrButtons == true) {
     enableInstrButtons = false; // to prevent multiple button clicks as instructions are updated
-    $('#Instruction' + instrInd).fadeOut(400).slideUp(); 
+    $('#Instruction' + instrInd).fadeOut(200).slideUp(); 
     instrInd = instrInd + incremVal; 
     setTimeout(function(){
       //update instruction and the 'next' button's function 
-      $('#Instruction' + instrInd).delay(400).fadeIn();
+      $('#Instruction' + instrInd).delay(200).fadeIn();
       document.getElementById('buttonNextText').innerHTML = buttonText;
       if (instrInd ==2 |instrInd ==6){// at switch point to next phase
         $('#buttonPrev').delay(button_delay).fadeIn();
@@ -10146,7 +10146,7 @@ function validateID(){
     //bring up spr practice instruction and update the next button
     instrInd=instrInd+1
     $('#instructions').show();
-    $('#Instruction' + instrInd).delay(button_delay).fadeIn();
+    $('#Instruction' + instrInd).delay(200).fadeIn();
     document.getElementById('buttonNextText').href = 'javascript:' + 'NextInstruction()';
     $('#buttonGroup').delay(button_delay).fadeIn();
     $('#buttonNext').delay(button_delay).fadeIn();
@@ -10194,7 +10194,7 @@ function instruction_postprac(){
   document.getElementById('buttonPrevText').href = 'javascript:' + 'prac_spr()';
   document.getElementById('buttonNextText').href = 'javascript:' + 'NextInstruction()';
   if (prac_round>1){$('#buttonNext').show();} else{$('#buttonNext').hide();}
-  $('#buttonGroup').show();
+  $('#buttonGroup').delay(button_delay).fadeIn();
   $('#buttonPrev').show();  
 }
 
@@ -10446,7 +10446,7 @@ function instruction_postspr(){
   $('#buttonPrev').hide();  
   document.getElementById('buttonNextText').innerHTML = "Begin";
   document.getElementById('buttonNextText').href = 'javascript:' + 'delayed_q1()';
-  $('#buttonGroup').show();
+  $('#buttonGroup').delay(button_delay).fadeIn();
   $('#buttonNext').delay(button_delay).fadeIn();
 }
 
@@ -10516,7 +10516,7 @@ function instruction_recall(){
   $('#buttonPrev').hide();   
   document.getElementById('buttonNextText').innerHTML = "Begin";
   document.getElementById('buttonNextText').href = 'javascript:' + 'obtain_recall()';
-  $('#buttonGroup').show();
+  $('#buttonGroup').delay(button_delay).fadeIn();
   $('#buttonNext').delay(button_delay).fadeIn();
 }
 
@@ -10569,7 +10569,7 @@ function instruction_postrecall(){
     window.alert('An error has occurred. Please keep a screenshot of current page and email us to get compensated for your time. Thank you!')
   }
 
-  $('#buttonGroup').show();
+  $('#buttonGroup').delay(button_delay).fadeIn();
   $('#buttonNext').delay(button_delay).fadeIn();
 }
 
