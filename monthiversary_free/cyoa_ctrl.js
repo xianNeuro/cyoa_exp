@@ -10343,7 +10343,6 @@ function SPR_keyRecorder(e) {
       allow=true 
     }, 5000)
   }
-
 } //EoF: SPR_keyRecorder
 
 
@@ -10430,13 +10429,13 @@ function SPR_buttonRecorder(choice_click) {
           story_text.push(response_text); // append selected response text to the story_text variable
           //update story text
           document.getElementById('spr_sentence').innerHTML = story.row[index].Story;
+          time_record('lag');     
         }
         //update choice text
         let label_var = ""
         document.getElementById('Response_Label1').innerHTML=label_var.concat(response_text);
         //update choice visibility
         $('#Response_Label1').show();
-        time_record('lag');       
         //clear choice variables
         response_label = "";
         response_text = "";
