@@ -10338,6 +10338,10 @@ function SPR_keyRecorder(e) {
   //this is to prevent multiple enter before next is enabled
   if (wait_click==false && allow==false){
     allow=true
+  }else{
+    setTimeout(function () {
+      allow=true 
+    }, 5000)
   }
 
 } //EoF: SPR_keyRecorder
