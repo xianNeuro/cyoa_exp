@@ -10453,8 +10453,9 @@ function SPR_buttonRecorder(choice_click) {
 
           },1000)
         },500)  
+    allow_click=true;
   }
-  allow_click=true;
+  
 }
 
 
