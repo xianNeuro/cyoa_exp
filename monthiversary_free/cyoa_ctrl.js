@@ -10240,6 +10240,7 @@ function SPR_keyRecorder(e) {
       setTimeout(function () { //set a small delay before the next key-press to proceed to the next sentence
         //reset key_flag for the next enter-press
         key_flag = 0; 
+        allow_click=true;
         //save current scene label and current text into separate variables
         if (pracInstr==true){
           curent_position = prac_story.row[index].Scene_lab; // save current scene label
@@ -10453,9 +10454,7 @@ function SPR_buttonRecorder(choice_click) {
 
           },1000)
         },500)  
-    allow_click=true;
-  }
-  
+  }  
 }
 
 
