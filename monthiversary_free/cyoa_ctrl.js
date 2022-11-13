@@ -9999,25 +9999,26 @@ function time_record(event_click){
 }
 
 function toggleFullScreen() {
-  $('#consent').show();
-  if ((document.fullScreenElement && document.fullScreenElement !== null) ||
-   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-    if (document.documentElement.requestFullScreen) {
-      document.documentElement.requestFullScreen();
-    } else if (document.documentElement.mozRequestFullScreen) {
-      document.documentElement.mozRequestFullScreen();
-    } else if (document.documentElement.webkitRequestFullScreen) {
-      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-    }
-  } else {
-    if (document.cancelFullScreen) {
-      document.cancelFullScreen();
-    } else if (document.mozCancelFullScreen) {
-      document.mozCancelFullScreen();
-    } else if (document.webkitCancelFullScreen) {
-      document.webkitCancelFullScreen();
-    }
-  }
+  cyoa_spr();
+  // $('#consent').show();
+  // if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+  //  (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+  //   if (document.documentElement.requestFullScreen) {
+  //     document.documentElement.requestFullScreen();
+  //   } else if (document.documentElement.mozRequestFullScreen) {
+  //     document.documentElement.mozRequestFullScreen();
+  //   } else if (document.documentElement.webkitRequestFullScreen) {
+  //     document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+  //   }
+  // } else {
+  //   if (document.cancelFullScreen) {
+  //     document.cancelFullScreen();
+  //   } else if (document.mozCancelFullScreen) {
+  //     document.mozCancelFullScreen();
+  //   } else if (document.webkitCancelFullScreen) {
+  //     document.webkitCancelFullScreen();
+  //   }
+  // }
   $('#askFull').hide();
 }
 
@@ -10276,12 +10277,13 @@ function SPR_keyRecorder(e) {
           } //EoF: current scene is choice/not
 
         }else{//if this is the formal cyoa 
-          time_record('enter');
           curent_position = story.row[index].Scene_lab; // save current scene label
           curent_text = story.row[index].Story; // save current text
-          story_path.push(curent_position); // append current scene position to the story_path variable
-          story_text.push(curent_text); // append current text position to the story_text variable
-
+          if (story_path.includes(curent_position)==false){
+            time_record('enter');
+            story_path.push(curent_position); // append current scene position to the story_path variable
+            story_text.push(curent_text); // append current text position to the story_text variable            
+          }
           //test if CURRENT scene is a choice scene or not 
           if (story.row[index].Choice=="N") { //if this is not a choice point
             //test if at end of story or not
@@ -10312,14 +10314,14 @@ function SPR_keyRecorder(e) {
                 $('#Response_Label1').hide(); //hide element
                 //update button text
                 document.getElementById('Button_1').textContent = story.row[index].Response_1
-                document.getElementById('Button_2').textContent = story.row[index].Response_2
-                wait_click=true
+                document.getElementById('Button_2').textContent = story.row[index].Response_2    
               }//EoF: updated scene choice/not
             } else { //if at end of story
               document.getElementById('spr_sentence').innerHTML = "You have completed Phase 3.";
               instruction_postspr();
             }
           }  else if(story.row[index].Choice=="Y") { //if this is a choice point
+            wait_click=true
             //update element visibility
             $('#Response_Label1').hide(); //hide element
             //update button visibility
@@ -10346,6 +10348,7 @@ function SPR_keyRecorder(e) {
 function SPR_buttonRecorder(choice_click) {
   if (pracInstr==false){
     time_record('click');
+    wait_click=false
   }
   
   //selected element change colours (white highlight top item)
@@ -10419,7 +10422,6 @@ function SPR_buttonRecorder(choice_click) {
           //update practice story text
           document.getElementById('spr_sentence').innerHTML = prac_story.row[index].Story;
         }else{
-          time_record('flashlag');
           //save selected response: append to story_path and story_text
           story_path.push(curent_position.toString().concat(response_label)); // append selected response label to the story_path variable
           story_text.push(response_text); // append selected response text to the story_text variable
@@ -10430,7 +10432,8 @@ function SPR_buttonRecorder(choice_click) {
         let label_var = ""
         document.getElementById('Response_Label1').innerHTML=label_var.concat(response_text);
         //update choice visibility
-        $('#Response_Label1').show();       
+        $('#Response_Label1').show();
+        time_record('lag');       
         //clear choice variables
         response_label = "";
         response_text = "";
@@ -10438,18 +10441,12 @@ function SPR_buttonRecorder(choice_click) {
         $('#Button_1').hide();
         $('#Button_2').hide();
 
-        //update button text
-        if (pracInstr==true){
-          document.getElementById('Button_1').textContent = prac_story.row[index].Response_1
-          document.getElementById('Button_2').textContent = prac_story.row[index].Response_2
-        }else{
-          document.getElementById('Button_1').textContent = story.row[index].Response_1
-          document.getElementById('Button_2').textContent = story.row[index].Response_2
-        }
+        //allow to proceed to the next page by pressing enter
+        wait_click=false;
+
       },1000)
     },500)
-  //allow to proceed to the next page by pressing enter
-  wait_click=false;
+  
 }
 
 
@@ -10676,11 +10673,3 @@ function download_data (){
   }
   newLink.click(); 
 }
-
-
-
-
-
-
-
-
