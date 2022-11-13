@@ -10240,7 +10240,6 @@ function SPR_keyRecorder(e) {
       setTimeout(function () { //set a small delay before the next key-press to proceed to the next sentence
         //reset key_flag for the next enter-press
         key_flag = 0; 
-        allow_click=true;
         //save current scene label and current text into separate variables
         if (pracInstr==true){
           curent_position = prac_story.row[index].Scene_lab; // save current scene label
@@ -10271,6 +10270,7 @@ function SPR_keyRecorder(e) {
               instruction_postprac();
             }
           }  else if(prac_story.row[index].Choice=="Y") { //if this is a choice point
+            allow_click=true;
             //update element visibility
             $('#Response_Label1').hide(); //hide element
             //update button visibility
@@ -10323,7 +10323,8 @@ function SPR_keyRecorder(e) {
               instruction_postspr();
             }
           }  else if(story.row[index].Choice=="Y") { //if this is a choice point
-            wait_click=true
+            allow_click=true;
+            wait_click=true;
             //update element visibility
             $('#Response_Label1').hide(); //hide element
             //update button visibility
