@@ -9977,6 +9977,7 @@ var button_delay =2000;//2000;
 var prac_round = 0;
 var wait_click=false;
 var allow=true;
+var allow_click=true;
 
 var pic_wait = 10000;
 var recall_wait = 60000;//5000; //wait for xxx (ms)
@@ -9999,25 +10000,26 @@ function time_record(event_click){
 }
 
 function toggleFullScreen() {
-  $('#consent').show();
-  if ((document.fullScreenElement && document.fullScreenElement !== null) ||
-   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-    if (document.documentElement.requestFullScreen) {
-      document.documentElement.requestFullScreen();
-    } else if (document.documentElement.mozRequestFullScreen) {
-      document.documentElement.mozRequestFullScreen();
-    } else if (document.documentElement.webkitRequestFullScreen) {
-      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-    }
-  } else {
-    if (document.cancelFullScreen) {
-      document.cancelFullScreen();
-    } else if (document.mozCancelFullScreen) {
-      document.mozCancelFullScreen();
-    } else if (document.webkitCancelFullScreen) {
-      document.webkitCancelFullScreen();
-    }
-  }
+  cyoa_spr();
+  // $('#consent').show();
+  // if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+  //  (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+  //   if (document.documentElement.requestFullScreen) {
+  //     document.documentElement.requestFullScreen();
+  //   } else if (document.documentElement.mozRequestFullScreen) {
+  //     document.documentElement.mozRequestFullScreen();
+  //   } else if (document.documentElement.webkitRequestFullScreen) {
+  //     document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+  //   }
+  // } else {
+  //   if (document.cancelFullScreen) {
+  //     document.cancelFullScreen();
+  //   } else if (document.mozCancelFullScreen) {
+  //     document.mozCancelFullScreen();
+  //   } else if (document.webkitCancelFullScreen) {
+  //     document.webkitCancelFullScreen();
+  //   }
+  // }
   $('#askFull').hide();
 }
 
@@ -10348,107 +10350,111 @@ function SPR_keyRecorder(e) {
 
 //button press: progress at choice points with button-click (progress story + save data)
 function SPR_buttonRecorder(choice_click) {
-  if (pracInstr==false){
-    time_record('click');
-    wait_click=false
-  }
-  
-  //selected element change colours (white highlight top item)
-  if (choice_click==1){
-    $("#Button_1").css("color", "black");
-    $("#Button_1").css("background-color", "white");
-    $("#Button_1").css("border", "steelblue");
-    $("#Button_1").css("border-style", "solid");
-  } 
-  if (choice_click==2){
-    $("#Button_2").css("color", "black");
-    $("#Button_2").css("background-color", "white");
-    $("#Button_2").css("border", "steelblue");
-    $("#Button_2").css("border-style", "solid");
-  }
-  //set timeout function (green lit-up the selected item)
-  setTimeout(function () {
-    if(choice_click==1){
-      $("#Button_1").css("background-color", "green");
-      $("#Button_1").css("border", "green");
-      $("#Button_1").css("border-style", "solid");
-      $("#Button_1").css("color", "black");
-      //the other option needs to go dark or disappear
-      $("#Button_2").css("background-color", "white");
-      $("#Button_2").css("border-style", "solid");
-      $("#Button_2").css("border", "grey");
-      $("#Button_2").css("color", "grey");
-    }else if(choice_click==2){
-      $("#Button_2").css("background-color", "green");
-      $("#Button_2").css("border", "green");
-      $("#Button_2").css("border-style", "solid");
-      $("#Button_2").css("color", "black");
-      //the other option needs to go dark or disappear
-      $("#Button_1").css("background-color", "white");
-      $("#Button_1").css("border-style", "solid");
-      $("#Button_1").css("border", "grey");
-      $("#Button_1").css("color", "grey");
-    }
-      //set timeout function
+  if (allow_click==true){
+      allow_click=false
+    
+      if (pracInstr==false){
+        time_record('click');
+        wait_click=false
+      }
+      
+      //selected element change colours (white highlight top item)
+      if (choice_click==1){
+        $("#Button_1").css("color", "black");
+        $("#Button_1").css("background-color", "white");
+        $("#Button_1").css("border", "steelblue");
+        $("#Button_1").css("border-style", "solid");
+      } 
+      if (choice_click==2){
+        $("#Button_2").css("color", "black");
+        $("#Button_2").css("background-color", "white");
+        $("#Button_2").css("border", "steelblue");
+        $("#Button_2").css("border-style", "solid");
+      }
+      //set timeout function (green lit-up the selected item)
       setTimeout(function () {
-        //buttons return colours to original state
-        $("#Button_1").css("border-style", "none");
-        $("#Button_1").css("color", "white");
-        $("#Button_1").css("background-color", "steelblue");
-        $("#Button_2").css("border-style", "none");
-        $("#Button_2").css("color", "white");
-        $("#Button_2").css("background-color", "steelblue");
-        //define response label and text
-        if (choice_click == 1){
-          response_label = "_1";
-          response_text = document.getElementById('Button_1').textContent;
-          //update story
-          if (pracInstr==true){
-            index = prac_story.row[index].Outcome_1-1;
-          }else{
-            choice_vec.push(choice_click); 
-            index = story.row[index].Outcome_1-1;
-          }
-        }else if(choice_click==2){ //second option
-          response_label = "_2";
-          response_text = document.getElementById('Button_2').textContent;
-          //update story
-          if (pracInstr==true){
-            index = prac_story.row[index].Outcome_2-1;
-          }else{
-            choice_vec.push(choice_click);
-            index = story.row[index].Outcome_2-1;
-          }
-        };
-        if (pracInstr==true){
-          //update practice story text
-          document.getElementById('spr_sentence').innerHTML = prac_story.row[index].Story;
-        }else{
-          //save selected response: append to story_path and story_text
-          story_path.push(curent_position.toString().concat(response_label)); // append selected response label to the story_path variable
-          story_text.push(response_text); // append selected response text to the story_text variable
-          //update story text
-          document.getElementById('spr_sentence').innerHTML = story.row[index].Story;
-          time_record('lag');     
+        if(choice_click==1){
+          $("#Button_1").css("background-color", "green");
+          $("#Button_1").css("border", "green");
+          $("#Button_1").css("border-style", "solid");
+          $("#Button_1").css("color", "black");
+          //the other option needs to go dark or disappear
+          $("#Button_2").css("background-color", "white");
+          $("#Button_2").css("border-style", "solid");
+          $("#Button_2").css("border", "grey");
+          $("#Button_2").css("color", "grey");
+        }else if(choice_click==2){
+          $("#Button_2").css("background-color", "green");
+          $("#Button_2").css("border", "green");
+          $("#Button_2").css("border-style", "solid");
+          $("#Button_2").css("color", "black");
+          //the other option needs to go dark or disappear
+          $("#Button_1").css("background-color", "white");
+          $("#Button_1").css("border-style", "solid");
+          $("#Button_1").css("border", "grey");
+          $("#Button_1").css("color", "grey");
         }
-        //update choice text
-        let label_var = ""
-        document.getElementById('Response_Label1').innerHTML=label_var.concat(response_text);
-        //update choice visibility
-        $('#Response_Label1').show();
-        //clear choice variables
-        response_label = "";
-        response_text = "";
-        //update button visibility
-        $('#Button_1').hide();
-        $('#Button_2').hide();
+          //set timeout function
+          setTimeout(function () {
+            //buttons return colours to original state
+            $("#Button_1").css("border-style", "none");
+            $("#Button_1").css("color", "white");
+            $("#Button_1").css("background-color", "steelblue");
+            $("#Button_2").css("border-style", "none");
+            $("#Button_2").css("color", "white");
+            $("#Button_2").css("background-color", "steelblue");
+            //define response label and text
+            if (choice_click == 1){
+              response_label = "_1";
+              response_text = document.getElementById('Button_1').textContent;
+              //update story
+              if (pracInstr==true){
+                index = prac_story.row[index].Outcome_1-1;
+              }else{
+                choice_vec.push(choice_click); 
+                index = story.row[index].Outcome_1-1;
+              }
+            }else if(choice_click==2){ //second option
+              response_label = "_2";
+              response_text = document.getElementById('Button_2').textContent;
+              //update story
+              if (pracInstr==true){
+                index = prac_story.row[index].Outcome_2-1;
+              }else{
+                choice_vec.push(choice_click);
+                index = story.row[index].Outcome_2-1;
+              }
+            };
+            if (pracInstr==true){
+              //update practice story text
+              document.getElementById('spr_sentence').innerHTML = prac_story.row[index].Story;
+            }else{
+              //save selected response: append to story_path and story_text
+              story_path.push(curent_position.toString().concat(response_label)); // append selected response label to the story_path variable
+              story_text.push(response_text); // append selected response text to the story_text variable
+              //update story text
+              document.getElementById('spr_sentence').innerHTML = story.row[index].Story;
+              time_record('lag');     
+            }
+            //update choice text
+            let label_var = ""
+            document.getElementById('Response_Label1').innerHTML=label_var.concat(response_text);
+            //update choice visibility
+            $('#Response_Label1').show();
+            //clear choice variables
+            response_label = "";
+            response_text = "";
+            //update button visibility
+            $('#Button_1').hide();
+            $('#Button_2').hide();
 
-        //allow to proceed to the next page by pressing enter
-        wait_click=false;
+            //allow to proceed to the next page by pressing enter
+            wait_click=false;
 
-      },1000)
-    },500)
-  
+          },1000)
+        },500)  
+  }
+  allow_click=true;
 }
 
 
