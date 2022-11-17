@@ -23,7 +23,7 @@ var timestep = []
 var instrInd = 0; // instruction to start at
 var phase1 = 3; //instruction phase1: general
 var phase2 = 4; //instruction phase2: about spr, lead to practice
-var phase3 = 4; //instruction phase3: post-practice, lead to formal story 
+var phase3 = 3; //instruction phase3: post-practice, lead to formal story 
 var enableInstrButtons = true; // for animating the showing/hiding of instructions screen buttons
 
 //spr related variables
@@ -296,7 +296,7 @@ var prac_story = {
     },
     {
       "Scene_lab": 23,
-      "Story": "After some brief searching, you book a next day flight to Dubai and enjoyed a wonderful first-class experience.",
+      "Story": "After some brief searching, you book a next day flight to Dubai and enjoy a wonderful first-class experience.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -576,7 +576,7 @@ var story = {
     },
     {
       "Scene_lab": 11,
-      "Story": "Your sight landed on the piano.",
+      "Story": "Your gaze lands on the piano.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -588,7 +588,7 @@ var story = {
     },
     {
       "Scene_lab": 12,
-      "Story": "You pushed it to the dark corner of the room days after the breakup, trying to hide this sick reminder of the happy days when you and Adam played this piano together.",
+      "Story": "You pushed it to the dark corner of the room days after the breakup, trying to hide the sick reminder of the happy days when you and Adam played this piano together.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4412,7 +4412,7 @@ var story = {
     },
     {
       "Scene_lab": 330,
-      "Story": "Each of you would pick a card at random.",
+      "Story": "Each of you would guess a card out loud, then draw one at random from the deck.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4784,7 +4784,7 @@ var story = {
     },
     {
       "Scene_lab": 361,
-      "Story": "A wave of extreme sadness overwhelmed you.",
+      "Story": "A wave of extreme sadness overwhelms you.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4964,7 +4964,7 @@ var story = {
     },
     {
       "Scene_lab": 376,
-      "Story": "Adam dabs at his shirt with a napkin, lips curled in disgust. “You’re sorry? This was my favorite shirt.”",
+      "Story": "“You're sorry? Do you know how much this shirt cost?”",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4976,7 +4976,7 @@ var story = {
     },
     {
       "Scene_lab": 377,
-      "Story": "His hands suddenly pause as he sniffs the air and leans over the cup. “Emily, what is that? You know I prefer lattes.”",
+      "Story": "He glares at Ryan, and then at the spreading stain. “You'd better get the hell out of here before I call your manager.”",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -10070,13 +10070,14 @@ function ChangeInstructionsScreen(buttonText, buttonFunction, incremVal) {
       if (instrInd ==2 |instrInd ==6){// at switch point to next phase
         $('#buttonPrev').delay(button_delay).fadeIn();
         document.getElementById('buttonNextText').href = buttonFunction;  
-      } else if (instrInd ==0 |instrInd ==3 |instrInd ==8){//places where we don't want subj to go back
+      } else if (instrInd ==0 |instrInd ==3){//places where we don't want subj to go back
         $('#buttonPrev').hide();
         document.getElementById('buttonNext').href = buttonFunction;    
-      } else if (instrInd ==9){//hide next button until attention checked
+      } else if (instrInd ==8){//hide next button until attention checked
+        $('#buttonPrev').hide();
         $('#buttonNext').hide();
         document.getElementById('buttonNext').href = buttonFunction;
-      } else if (instrInd ==10){//at switch point to next phase & where we don't want subj to go back
+      } else if (instrInd ==9){//at switch point to next phase & where we don't want subj to go back
         $('#buttonPrev').hide();
         document.getElementById('buttonNextText').href = buttonFunction;  
       } else{// in the middle of each instruction phase
@@ -10176,6 +10177,8 @@ function prac_spr(){
   $('#spr_text').show();
   document.getElementById('spr_sentence').innerHTML = prac_story.row[index].Story; //set story sentence
   $('#spr_sentence').show();
+  //reminder only appears at the first screen
+  $('#Reminder').delay(100).fadeIn();
   //add event listener
   window.addEventListener('keydown', SPR_keyRecorder);
 }
@@ -10195,9 +10198,10 @@ function instruction_postprac(){
   document.getElementById('buttonNextText').innerHTML = "Next";
   document.getElementById('buttonPrevText').href = 'javascript:' + 'prac_spr()';
   document.getElementById('buttonNextText').href = 'javascript:' + 'NextInstruction()';
-  if (prac_round>1){$('#buttonNext').show();} else{$('#buttonNext').hide();}
+  // if (prac_round>1){$('#buttonNext').show();} else{$('#buttonNext').hide();} //this is to force re-explore at least once
   $('#buttonGroup').delay(400).fadeIn();
   $('#buttonPrev').show();  
+  $('#buttonNext').show();  
 }
 
 function read_carefully() {
@@ -10231,6 +10235,7 @@ function cyoa_spr(){
 
 //key press: progress at non-choice points with enter key (progress story + save data)
 function SPR_keyRecorder(e) {
+  $('#Reminder').hide();
   if (e.keyCode == 13 && allow==true) { //if enter was pressed
     allow = false
     //check if enter has been pressed already
@@ -10303,6 +10308,7 @@ function SPR_keyRecorder(e) {
               };
               //update story by index
               document.getElementById('spr_sentence').innerHTML = story.row[index].Story; 
+
               //test if the updated scene is a choice scene or not
               if (story.row[index].Choice=="N") { //if the updated scene is not a choice scene
                 //update element visibility
@@ -10326,6 +10332,9 @@ function SPR_keyRecorder(e) {
             wait_click=true;
             //update element visibility
             $('#Response_Label1').hide(); //hide element
+            //update button text
+            document.getElementById('Button_1').textContent = story.row[index].Response_1
+            document.getElementById('Button_2').textContent = story.row[index].Response_2    
             //update button visibility
             $('#Button_1').show();
             $('#Button_2').show();
@@ -10553,7 +10562,7 @@ function pic_descrip(){
 function validate_length(){
   let data = document.getElementById('description_input').value;
   pic_data = data;
-  if (data.length>=100){
+  if (data.length>=80){
     instruction_recall();
   }else{
     window.alert("Please try to describe more in depth.");
@@ -10592,7 +10601,7 @@ function obtain_recall(){
 function validate_recall(){
   let data = document.getElementById('recall_input').value;
   recall_data= data;
-  if (data.length>=500){
+  if (data.length>=300){
     instruction_postrecall();
   }else{
     window.alert("We won't be able to use your data if this memory does not reflect your story in good depth. Please try to recall more.");
