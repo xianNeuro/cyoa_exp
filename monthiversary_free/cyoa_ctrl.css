@@ -208,7 +208,15 @@ body {
   left: 20%;
   transform: translate(-50%, -50%)
 }
-
+#Reminder {
+  display: none;
+  color: gray;
+/*  display: inline-block;*/
+  position: fixed;
+  top: 77%; 
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
 
 
 
