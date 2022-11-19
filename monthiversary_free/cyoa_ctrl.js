@@ -10562,7 +10562,7 @@ function pic_descrip(){
 function validate_length(){
   let data = document.getElementById('description_input').value;
   pic_data = data;
-  if (data.length>=80){
+  if (data.length>=100){
     instruction_recall();
   }else{
     window.alert("Please try to describe more in depth.");
@@ -10601,7 +10601,7 @@ function obtain_recall(){
 function validate_recall(){
   let data = document.getElementById('recall_input').value;
   recall_data= data;
-  if (data.length>=300){
+  if (data.length>=1000){
     instruction_postrecall();
   }else{
     window.alert("We won't be able to use your data if this memory does not reflect your story in good depth. Please try to recall more.");
