@@ -10604,7 +10604,7 @@ function validate_recall(){
   if (data.length>=1000){
     instruction_postrecall();
   }else{
-    window.alert("We won't be able to use your data if this memory does not reflect your story in good depth. Please try to recall more.");
+    window.alert("We won't be able to use your data if this memory does not reflect your story in good depth. Please try to recall more. We offer $2 bonus to those whose recall memory is among the top 40% of all subjects. We would sincerely appreciate your effort.");
   }
 }
 
