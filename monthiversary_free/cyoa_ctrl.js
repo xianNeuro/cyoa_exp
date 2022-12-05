@@ -9974,10 +9974,14 @@ var setsplit = [96,322,551,593,644];//scenes where sec2-6 split into sl1/2/3 bas
 var endsplit = [763]; //this is the point to go into 1 of 2 different endings
 var ending = 1+Math.round(Math.random()); //half subj to 1; half to 2
 var button_delay =2000;//2000;
-var prac_round = 0;
 var wait_click=false;
 var allow=true;
 var allow_click=true;
+
+var prac_round = 0;
+var prac_path = [];
+var prac_text = [];
+var prac_vec = [];
 
 var pic_wait = 10000;
 var recall_wait = 60000;//5000; //wait for xxx (ms)
@@ -10245,9 +10249,12 @@ function SPR_keyRecorder(e) {
         //reset key_flag for the next enter-press
         key_flag = 0; 
         //save current scene label and current text into separate variables
-        if (pracInstr==true){
+        
+        if (pracInstr==true){ //if this is the practice story 
           curent_position = prac_story.row[index].Scene_lab; // save current scene label
           curent_text = prac_story.row[index].Story; // save current text
+          prac_path.push(curent_position); // append current scene position to the story_path variable
+          prac_text.push(curent_text); // append current text position to the story_text variable            
           //test if CURRENT scene is a choice scene or not 
           if (prac_story.row[index].Choice=="N") { //if this is not a choice point
             //test if at end of story or not
@@ -10282,7 +10289,8 @@ function SPR_keyRecorder(e) {
             $('#Button_2').show();
           } //EoF: current scene is choice/not
 
-        }else{//if this is the formal cyoa 
+          
+        }else{ //if this is the formal cyoa 
           curent_position = story.row[index].Scene_lab; // save current scene label
           curent_text = story.row[index].Story; // save current text
           if (story_path.includes(curent_position)==false){
@@ -10419,6 +10427,7 @@ function SPR_buttonRecorder(choice_click) {
               response_text = document.getElementById('Button_1').textContent;
               //update story
               if (pracInstr==true){
+                prac_vec.push(choice_click); 
                 index = prac_story.row[index].Outcome_1-1;
               }else{
                 choice_vec.push(choice_click); 
@@ -10429,6 +10438,7 @@ function SPR_buttonRecorder(choice_click) {
               response_text = document.getElementById('Button_2').textContent;
               //update story
               if (pracInstr==true){
+                prac_vec.push(choice_click); 
                 index = prac_story.row[index].Outcome_2-1;
               }else{
                 choice_vec.push(choice_click);
@@ -10436,6 +10446,9 @@ function SPR_buttonRecorder(choice_click) {
               }
             };
             if (pracInstr==true){
+              //save selected response: append to story_path and story_text
+              prac_path.push(curent_position.toString().concat(response_label)); // append selected response label to the story_path variable
+              prac_text.push(response_text); // append selected response text to the story_text variable
               //update practice story text
               document.getElementById('spr_sentence').innerHTML = prac_story.row[index].Story;
             }else{
@@ -10670,6 +10683,10 @@ function download_data (){
       'story_path,' + story_path + '\n' + 
       'story_text,' +  story_text + '\n' + 
       'story_recall,' +  recall_data + '\n' + 
+      'prac_round,' + prac_round + '\n' + 
+      'prac_path,' + prac_path + '\n' + 
+      'prac_text,' +  prac_text + '\n' + 
+      'prac_vec,' +  prac_vec + '\n' + 
       'quiz1,' + quiz1_data + '\n' +
       'quiz2,' + quiz2_data + '\n' + 
       'pic_descrip,' +  pic_data;
