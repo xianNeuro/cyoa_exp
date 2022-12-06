@@ -10676,6 +10676,7 @@ function download_data (){
   let data = 
       'subject_id,' + prolific_PID +'\n' + 
       'study_version,' + story_name + '_'+version +'\n' + 
+      'storyline,' + sl + '\n' + 
       'ending_version,' + ending + '\n' + 
       'choice_vec,' + choice_vec + '\n' +
       'time_stamp,' + timestamp + '\n' +
