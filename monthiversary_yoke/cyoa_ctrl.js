@@ -10159,27 +10159,26 @@ function time_record(event_click){
 }
 
 function toggleFullScreen() {
-  // $('#consent').show();
-  // if ((document.fullScreenElement && document.fullScreenElement !== null) ||
-  //  (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-  //   if (document.documentElement.requestFullScreen) {
-  //     document.documentElement.requestFullScreen();
-  //   } else if (document.documentElement.mozRequestFullScreen) {
-  //     document.documentElement.mozRequestFullScreen();
-  //   } else if (document.documentElement.webkitRequestFullScreen) {
-  //     document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-  //   }
-  // } else {
-  //   if (document.cancelFullScreen) {
-  //     document.cancelFullScreen();
-  //   } else if (document.mozCancelFullScreen) {
-  //     document.mozCancelFullScreen();
-  //   } else if (document.webkitCancelFullScreen) {
-  //     document.webkitCancelFullScreen();
-  //   }
-  // }
-  // $('#askFull').hide();
-  cyoa_spr();
+  $('#consent').show();
+  if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    if (document.documentElement.requestFullScreen) {
+      document.documentElement.requestFullScreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullScreen) {
+      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+  } else {
+    if (document.cancelFullScreen) {
+      document.cancelFullScreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitCancelFullScreen) {
+      document.webkitCancelFullScreen();
+    }
+  }
+  $('#askFull').hide();
 }
 
 
@@ -10496,8 +10495,8 @@ function SPR_keyRecorder(e) {
             //update element visibility
             $('#Response_Label1').hide(); //hide element
             // //update button text
-            // document.getElementById('Button_1').textContent = story.row[index].Response_1
-            // document.getElementById('Button_2').textContent = story.row[index].Response_2    
+            document.getElementById('Button_1').textContent = story.row[index].Response_1
+            document.getElementById('Button_2').textContent = story.row[index].Response_2    
             //update button visibility
             $('#Button_1').show();
             $('#Button_2').show();
