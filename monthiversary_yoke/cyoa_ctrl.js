@@ -10031,7 +10031,6 @@ prac_counterbalance = getRandomInt(8);
 assign_counter(prac_counterbalance);
 //counterbalancing: 18 different free-route stories (3 per 3 storyline per 2 ending)
 var mycounterbalance = getRandomInt(8);
-console.log(8);
 // EDIT: added all these variables below
 var routeIndex = 0;
 var choiceIndex = 0;
