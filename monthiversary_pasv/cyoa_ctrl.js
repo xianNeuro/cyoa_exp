@@ -10026,8 +10026,8 @@ function assign_counter(prac_counterbalance){
     prac_choice_vector= [2,2,2];
   }
 };
-//randomly select practice route
-prac_counterbalance = getRandomInt(8);
+//select practice route
+prac_counterbalance = 2;
 assign_counter(prac_counterbalance);
 //counterbalancing: 18 different free-route stories (3 per 3 storyline per 2 ending)
 var mycounterbalance = getRandomInt(18);
@@ -10328,9 +10328,8 @@ function prac_spr(){
   choiceIndex = 0;
   pracInstr=true;
   prac_round = prac_round+1;
-  prac_counterbalance = getRandomInt(8);
-  assign_counter(prac_counterbalance);
-  // assign_counter(prac_counterbalance);
+//   prac_counterbalance = getRandomInt(8);
+//   assign_counter(prac_counterbalance);
   //hide instruction and button
   $('#instructions').hide();
   $('#Instruction' + instrInd).hide();
