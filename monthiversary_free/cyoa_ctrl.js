@@ -10071,7 +10071,7 @@ function ChangeInstructionsScreen(buttonText, buttonFunction, incremVal) {
       //update instruction and the 'next' button's function 
       $('#Instruction' + instrInd).delay(200).fadeIn();
       document.getElementById('buttonNextText').innerHTML = buttonText;
-      if (instrInd ==2 |instrInd ==6){// at switch point to next phase
+      if (instrInd ==2){// at switch point to next phase
         $('#buttonPrev').delay(button_delay).fadeIn();
         document.getElementById('buttonNextText').href = buttonFunction;  
       } else if (instrInd ==0 |instrInd ==3){//places where we don't want subj to go back
@@ -10081,7 +10081,7 @@ function ChangeInstructionsScreen(buttonText, buttonFunction, incremVal) {
         $('#buttonPrev').hide();
         $('#buttonNext').hide();
         document.getElementById('buttonNext').href = buttonFunction;
-      } else if (instrInd ==9){//at switch point to next phase & where we don't want subj to go back
+      } else if (instrInd ==9 |instrInd ==6){//at switch point to next phase & where we don't want subj to go back
         $('#buttonPrev').hide();
         document.getElementById('buttonNextText').href = buttonFunction;  
       } else{// in the middle of each instruction phase
