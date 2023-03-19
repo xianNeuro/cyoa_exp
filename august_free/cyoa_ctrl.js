@@ -1036,7 +1036,7 @@ var story = {
     },
     {
       "Scene_lab": 49,
-      "Story": "“My name is August Chambers, and this is my home. If you’re reading this, I’m dead and I want you to find my killer.”",
+      "Story": "<i>“My name is August Chambers, and this is my home. If you’re reading this, I’m dead and I want you to find my killer.”</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1044,7 +1044,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 118
+      "NumChar": 124
     },
     {
       "Scene_lab": 50,
@@ -1096,7 +1096,7 @@ var story = {
     },
     {
       "Scene_lab": 54,
-      "Story": "“If you succeed, $100,000 will be wired to your HouseSittingSitters.com account by lunch tomorrow.”",
+      "Story": "<i>“If you succeed, $100,000 will be wired to your HouseSittingSitters.com account by lunch tomorrow.”</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1104,7 +1104,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 100
+      "NumChar": 106
     },
     {
       "Scene_lab": 55,
@@ -1132,7 +1132,7 @@ var story = {
     },
     {
       "Scene_lab": 57,
-      "Story": "“I’m an Augmented Reality Engineer. This house is the pinnacle of my career, designed so that each of its rooms holds an important memory of mine, as recorded by micro-cameras in my contact lens.",
+      "Story": "<i>“I’m an Augmented Reality Engineer. This house is the pinnacle of my career, designed so that each of its rooms holds an important memory of mine, as recorded by micro-cameras in my contact lens.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1140,11 +1140,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 196
+      "NumChar": 202
     },
     {
       "Scene_lab": 58,
-      "Story": "Each augmented reality room simulates my past using sentient artificial intelligence agents.",
+      "Story": "<i>Each augmented reality room simulates my past using sentient artificial intelligence agents.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1152,11 +1152,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 93
+      "NumChar": 99
     },
     {
       "Scene_lab": 59,
-      "Story": "A time capsule, if you will, but more than that—the AI system of the house constantly draws data from each of these memories.",
+      "Story": "<i>A time capsule, if you will, but more than that—the AI system of the house constantly draws data from each of these memories.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1164,11 +1164,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 125
+      "NumChar": 132
     },
     {
       "Scene_lab": 60,
-      "Story": "From each simulation, it learns and updates the behavioral pattern of the AI agents. This enables me to interact with those agents and extract information that’s not explicitly in the recordings.",
+      "Story": "<i>From each simulation, it learns and updates the behavioral pattern of the AI agents. This enables me to interact with those agents and extract information that’s not explicitly in the recordings.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1176,11 +1176,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 196
+      "NumChar": 202
     },
     {
       "Scene_lab": 61,
-      "Story": "My work can be dangerous. There are a lot of people that would prefer me dead. I used these rooms to document my life and to predict potential danger.",
+      "Story": "<i>My work can be dangerous. There are a lot of people that would prefer me dead. I used these rooms to document my life and to predict potential danger.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1188,11 +1188,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 150
+      "NumChar": 157
     },
     {
       "Scene_lab": 62,
-      "Story": "The AI system of the house is completely offline to prevent a data leak.",
+      "Story": "<i>The AI system of the house is completely offline to prevent a data leak.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1200,11 +1200,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 72
+      "NumChar": 79
     },
     {
       "Scene_lab": 63,
-      "Story": "Under normal circumstances, if the system detected a future threat to my safety, the name of the potential killer would be sent directly to my lens when I walk into any room.",
+      "Story": "<i>Under normal circumstances, if the system detected a future threat to my safety, the name of the potential killer would be sent directly to my lens when I walk into any room.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1212,11 +1212,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 175
+      "NumChar": 181
     },
     {
       "Scene_lab": 64,
-      "Story": "Sadly, I’m not there, but I do have a Plan B—that’s where you enter.",
+      "Story": "<i>Sadly, I’m not there, but I do have a Plan B—that’s where you enter.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1224,11 +1224,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 69
+      "NumChar": 75
     },
     {
       "Scene_lab": 65,
-      "Story": "When the AI system of the house detects that the person entering the room is not me, it triggers a special mechanism.",
+      "Story": "<i>When the AI system of the house detects that the person entering the room is not me, it triggers a special mechanism.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1236,11 +1236,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 117
+      "NumChar": 124
     },
     {
       "Scene_lab": 66,
-      "Story": "To avoid presenting the name to the wrong person, it shows the name of the killer in separate letters, each hinted by a clue, hidden in a separate room.",
+      "Story": "<i>To avoid presenting the name to the wrong person, it shows the name of the killer in separate letters, each hinted by a clue, hidden in a separate room.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1248,11 +1248,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 153
+      "NumChar": 159
     },
     {
       "Scene_lab": 67,
-      "Story": "Search for those clues in any of the rooms—the system knows to present the letters in sequence, and you’ll know you’ve found a clue when you see one.",
+      "Story": "<i>Search for those clues in any of the rooms—the system knows to present the letters in sequence, and you’ll know you’ve found a clue when you see one.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1260,11 +1260,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 149
+      "NumChar": 156
     },
     {
       "Scene_lab": 68,
-      "Story": "The system shortens the killer’s name to a three-letter abbreviation, so you’ll have to piece them together and determine their meaning.",
+      "Story": "<i>The system shortens the killer’s name to a three-letter abbreviation, so you’ll have to piece them together and determine their meaning.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1272,11 +1272,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 137
+      "NumChar": 143
     },
     {
       "Scene_lab": 69,
-      "Story": "I’ll caution you: in each room, there’s a clock displaying a countdown to the room’s reset.",
+      "Story": "<i>I’ll caution you: in each room, there’s a clock displaying a countdown to the room’s reset.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1284,11 +1284,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 91
+      "NumChar": 98
     },
     {
       "Scene_lab": 70,
-      "Story": "No matter what, do not linger in a room beyond the time on its clock.",
+      "Story": "<i>No matter what, do not linger in a room beyond the time on its clock.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1296,11 +1296,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 70
+      "NumChar": 76
     },
     {
       "Scene_lab": 71,
-      "Story": "Once you piece together a name, go to the basement and enter it into the black typewriter.",
+      "Story": "<i>Once you piece together a name, go to the basement and enter it into the black typewriter.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1308,11 +1308,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 90
+      "NumChar": 97
     },
     {
       "Scene_lab": 72,
-      "Story": "That’s the only online device of the house, unhooked from the main system.",
+      "Story": "<i>That’s the only online device of the house, unhooked from the main system.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1320,11 +1320,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 74
+      "NumChar": 81
     },
     {
       "Scene_lab": 73,
-      "Story": "The name you enter there will be sent directly to the cloud, and you’re done.”",
+      "Story": "<i>The name you enter there will be sent directly to the cloud, and you’re done.”</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1332,7 +1332,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 79
+      "NumChar": 85
     },
     {
       "Scene_lab": 74,
@@ -1996,7 +1996,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 1,
-      "NumChar": 80
+      "NumChar": 87
     },
     {
       "Scene_lab": 129,
@@ -7572,7 +7572,7 @@ var story = {
     },
     {
       "Scene_lab": 593,
-      "Story": "A bloody copy of The Scarlet Letter, a red horseshoe, and a Scottish “G.”",
+      "Story": "A bloody copy of <i>The Scarlet Letter</i>, a red horseshoe, and a Scottish “G.”",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -7580,7 +7580,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 4,
       "Storyline": 0,
-      "NumChar": 74
+      "NumChar": 81
     },
     {
       "Scene_lab": 594,
@@ -7596,7 +7596,7 @@ var story = {
     },
     {
       "Scene_lab": 595,
-      "Story": "Maybe The Scarlet Letter refers to a specific letter? You should’ve paid more attention in high school.",
+      "Story": "Maybe <i>The Scarlet Letter</i> refers to a specific letter? You should’ve paid more attention in high school.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -7604,7 +7604,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 4,
       "Storyline": 0,
-      "NumChar": 104
+      "NumChar": 111
     },
     {
       "Scene_lab": 596,
@@ -7644,7 +7644,7 @@ var story = {
     },
     {
       "Scene_lab": 599,
-      "Story": "The Scarlet Letter, though…you’re going to have to outsource this one.",
+      "Story": "<i>The Scarlet Letter</i>, though…you’re going to have to outsource this one.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -7652,7 +7652,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 4,
       "Storyline": 0,
-      "NumChar": 70
+      "NumChar": 77
     },
     {
       "Scene_lab": 600,
@@ -9352,9 +9352,9 @@ function instruction_upload(){
   document.getElementById('buttonPrevText').href = 'javascript:' + 'instruction_postrecall()';
   document.getElementById('buttonNextText').innerHTML = "Webpage";
   if (ending==1){
-    document.getElementById('buttonNextText').href = "https://jhukrieger.co1.qualtrics.com/jfe/form/SV_8e2rakR80f3O914";
+    document.getElementById('buttonNextText').href = "https://jh.qualtrics.com/jfe/form/SV_cYhj7B1w1CQmlbU";
   }else if (ending==2){
-    document.getElementById('buttonNextText').href = "https://jhukrieger.co1.qualtrics.com/jfe/form/SV_0P2N3H67J6TeIHc";
+    document.getElementById('buttonNextText').href = "https://jh.qualtrics.com/jfe/form/SV_0UtDViJK1XAYvzg";
   }else{
     window.alert('An error has occurred. Please keep a screenshot of current page and email us to get compensated for your time. Thank you!')
   }
