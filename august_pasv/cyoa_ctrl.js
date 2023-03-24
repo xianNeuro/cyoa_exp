@@ -648,7 +648,7 @@ var story = {
     },
     {
       "Scene_lab": 17,
-      "Story": "Flicking on a light switch, you take in your surroundings – 12 fish tanks sit on ornate tables, a light with a different colored bulb illuminating each.",
+      "Story": "Flicking on a light switch, you take in your surroundings. Twelve fish tanks sit on ornate tables, a light with a different colored bulb illuminating each.",
       "Choice": "Y",
       "Response_1": "You go to the red tank.",
       "Response_2": "You go to the purple tank.",
@@ -656,7 +656,7 @@ var story = {
       "Outcome_2": 18,
       "Section": 1,
       "Storyline": 0,
-      "NumChar": 153
+      "NumChar": 156
     },
     {
       "Scene_lab": 18,
@@ -964,7 +964,7 @@ var story = {
     },
     {
       "Scene_lab": 43,
-      "Story": "For all you know, it could be a sick prank by some stupid kids, but your gut says otherwise.",
+      "Story": "For all you know, it could be a prank, put there by some dumb kids, but your gut says otherwise.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -972,7 +972,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 92
+      "NumChar": 96
     },
     {
       "Scene_lab": 44,
@@ -1000,7 +1000,7 @@ var story = {
     },
     {
       "Scene_lab": 46,
-      "Story": "Maybe there’s backup elsewhere in the room.",
+      "Story": "Maybe there’s a backup.",
       "Choice": "Y",
       "Response_1": "You examine the fish food container.",
       "Response_2": "You poke around a shelf.",
@@ -1008,7 +1008,7 @@ var story = {
       "Outcome_2": 47,
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 44
+      "NumChar": 23
     },
     {
       "Scene_lab": 47,
@@ -1192,7 +1192,7 @@ var story = {
     },
     {
       "Scene_lab": 62,
-      "Story": "<i>The AI system of the house is completely offline to prevent a data leak.</i>",
+      "Story": "<i>The AI system of the house is completely disconnected from the internet to prevent a data leak.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1200,7 +1200,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 79
+      "NumChar": 102
     },
     {
       "Scene_lab": 63,
@@ -1312,7 +1312,7 @@ var story = {
     },
     {
       "Scene_lab": 72,
-      "Story": "<i>That’s the only online device of the house, unhooked from the main system.</i>",
+      "Story": "<i>That’s the only device in the house connected to the outside world, unhooked from the main system.</i>",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1320,7 +1320,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 81
+      "NumChar": 105
     },
     {
       "Scene_lab": 73,
@@ -1348,7 +1348,7 @@ var story = {
     },
     {
       "Scene_lab": 75,
-      "Story": "So…every room in here is an independent memory of the homeowner, and now, they're some key to his death? This is crazy.",
+      "Story": "So…every room in here is an independent memory of the homeowner, and now, they're some key to solving his murder? This is crazy. You fold and unfold the note, pondering what to do.",
       "Choice": "Y",
       "Response_1": "You’ve got to get out of here.",
       "Response_2": "You’re going for the $100,000.",
@@ -1356,7 +1356,7 @@ var story = {
       "Outcome_2": 76,
       "Section": 2,
       "Storyline": 0,
-      "NumChar": 120
+      "NumChar": 180
     },
     {
       "Scene_lab": 76,
@@ -1388,7 +1388,7 @@ var story = {
     },
     {
       "Scene_lab": 78,
-      "Story": "The cat reappears. You shoo it as you pass, starting to get freaked out by its human-like eyes.",
+      "Story": "The cat reappears. You shoo it as you pass, starting to get freaked out by its silent gaze.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1396,7 +1396,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 1,
-      "NumChar": 96
+      "NumChar": 91
     },
     {
       "Scene_lab": 79,
@@ -1676,7 +1676,7 @@ var story = {
     },
     {
       "Scene_lab": 102,
-      "Story": "But safety never pays the bills.",
+      "Story": "But since you’re already here…",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1684,7 +1684,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 1,
-      "NumChar": 33
+      "NumChar": 30
     },
     {
       "Scene_lab": 103,
@@ -1712,7 +1712,7 @@ var story = {
     },
     {
       "Scene_lab": 105,
-      "Story": "Before you realize, you’ve entered the room.",
+      "Story": "She tugs on your arm, which rests against the doorframe, pulling you onto the sand. Before you realize, you’ve entered the room.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -1720,7 +1720,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 1,
-      "NumChar": 45
+      "NumChar": 23
     },
     {
       "Scene_lab": 106,
@@ -2120,7 +2120,7 @@ var story = {
     },
     {
       "Scene_lab": 139,
-      "Story": "You crane your neck, straining to listen.",
+      "Story": "You crane your neck, straining to listen.You follow the music to a red and yellow door.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -2128,11 +2128,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 2,
-      "NumChar": 42
+      "NumChar": 89
     },
     {
       "Scene_lab": 140,
-      "Story": "You follow the music to a red and yellow door.",
+      "Story": "The paint reminds you of your college spirit colors from years ago. That’s odd.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -2140,11 +2140,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 2,
-      "NumChar": 47
+      "NumChar": 23
     },
     {
       "Scene_lab": 141,
-      "Story": "The paint reminds you of your college spirit colors from years ago. That’s odd.",
+      "Story": "You open the door and poke your head inside.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -2156,7 +2156,7 @@ var story = {
     },
     {
       "Scene_lab": 142,
-      "Story": "You open the door and poke your head inside.",
+      "Story": "Your feet are still in the mansion, but your head is in the freshman quad of your alma mater.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -2168,7 +2168,7 @@ var story = {
     },
     {
       "Scene_lab": 143,
-      "Story": "Your feet are still in the mansion, but your head is in the freshman quad of your alma mater.",
+      "Story": "A parade passes by the sidewalk, red jerseys and chalked up faces celebrating your old school’s football team after what appears to be a win.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -2180,7 +2180,7 @@ var story = {
     },
     {
       "Scene_lab": 144,
-      "Story": "A parade passes by the sidewalk, red jerseys and chalked up faces celebrating your old school’s football team after what appears to be a win.",
+      "Story": "You can’t quite tell if it’s August’s memory or yours from a post-game parade, but it can’t be yours – right?",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -2192,7 +2192,7 @@ var story = {
     },
     {
       "Scene_lab": 145,
-      "Story": "You can’t quite tell if it’s August’s memory or yours from a post-game parade, but it can’t be yours – right?",
+      "Story": "The hairstyles, the clothes, the vibes are just a little outdated. Plus, you don’t recognize a single person.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -2204,7 +2204,7 @@ var story = {
     },
     {
       "Scene_lab": 146,
-      "Story": "The hairstyles, the clothes, the vibes are just a little outdated. Plus, you don’t recognize a single person.",
+      "Story": "It’s settled. You and August just happened to go to the same public university.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -2216,7 +2216,7 @@ var story = {
     },
     {
       "Scene_lab": 147,
-      "Story": "It’s settled. You and August just happened to go to the same public university.",
+      "Story": "It’s not like it’s a small community – there are hundreds of thousands of alums across the globe.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -2228,7 +2228,7 @@ var story = {
     },
     {
       "Scene_lab": 148,
-      "Story": "It’s not like it’s a small community – there are hundreds of thousands of alums across the globe.",
+      "Story": "The memory is so vivid, it’s scary.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -2240,7 +2240,7 @@ var story = {
     },
     {
       "Scene_lab": 149,
-      "Story": "The memory is so vivid, it’s scary.",
+      "Story": "For a moment, you feel an urge to flee the scene – get out before anything crazy happens.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -2252,7 +2252,7 @@ var story = {
     },
     {
       "Scene_lab": 150,
-      "Story": "For a moment, you feel an urge to flee the scene – get out before anything crazy happens. But safety never pays the bills.",
+      "Story": "But since you’re already here…",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -2260,7 +2260,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 2,
-      "NumChar": 123
+      "NumChar": 90
     },
     {
       "Scene_lab": 151,
@@ -3008,7 +3008,7 @@ var story = {
     },
     {
       "Scene_lab": 213,
-      "Story": "Everyone wears black jumpsuits, adorned with a black pentagon pin on their left breast.The pattern engraved on the pin was oddly complex",
+      "Story": "Everyone wears black jumpsuits, adorned with a black pentagon pin on their left breast.The pattern engraved on the pin is oddly complex",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3016,7 +3016,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 3,
-      "NumChar": 137
+      "NumChar": 136
     },
     {
       "Scene_lab": 214,
@@ -3032,7 +3032,7 @@ var story = {
     },
     {
       "Scene_lab": 215,
-      "Story": "A glass dome, large enough to fit a studio apartment, takes up most of the ground floor.",
+      "Story": "A glass dome, large enough to fit a studio apartment into, takes up most of the ground floor. Everyone is gathered near the glass, watching intently.",
       "Choice": "Y",
       "Response_1": "You join the group to watch.",
       "Response_2": "You linger in the back.",
@@ -3040,7 +3040,7 @@ var story = {
       "Outcome_2": 216,
       "Section": 2,
       "Storyline": 3,
-      "NumChar": 89
+      "NumChar": 149
     },
     {
       "Scene_lab": 216,
@@ -3164,7 +3164,7 @@ var story = {
     },
     {
       "Scene_lab": 226,
-      "Story": "A woman walks forth from the crowd.",
+      "Story": "A woman walks forward from the crowd.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3172,7 +3172,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 3,
-      "NumChar": 35
+      "NumChar": 37
     },
     {
       "Scene_lab": 227,
@@ -3200,7 +3200,7 @@ var story = {
     },
     {
       "Scene_lab": 229,
-      "Story": "Can’t complete the assessments? Not our problem.”",
+      "Story": "Can’t complete the assessments, Bernard? Not our problem.”",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3208,11 +3208,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 3,
-      "NumChar": 50
+      "NumChar": 59
     },
     {
       "Scene_lab": 230,
-      "Story": "The man sits back, defeated. “You remember that song I wrote for Jimmy, Aug?”",
+      "Story": "The man, Bernard, sits back, defeated. “You remember that song I wrote for Jimmy, Aug?”",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3220,7 +3220,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 3,
-      "NumChar": 77
+      "NumChar": 87
     },
     {
       "Scene_lab": 231,
@@ -3236,7 +3236,7 @@ var story = {
     },
     {
       "Scene_lab": 232,
-      "Story": "The timer goes off. He slumps over.",
+      "Story": "He peers into the crowd, gestures at you a man who’s holding a book, and looks back at you, as if pleading for your promise.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3248,7 +3248,7 @@ var story = {
     },
     {
       "Scene_lab": 233,
-      "Story": "The other people in the room walk away, unfazed.",
+      "Story": "The timer goes off. He slumps over.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3256,23 +3256,23 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 3,
-      "NumChar": 49
+      "NumChar": 112
     },
     {
       "Scene_lab": 234,
-      "Story": "August’s son looks back at you, sighs, then walks briskly off.",
+      "Story": "The other people in the room walk away, unfazed. August’s son looks back at you, sighs, then walks briskly off.",
       "Choice": "Y",
       "Response_1": "You retrieve the book.",
       "Response_2": "You run to the glass.",
-      "Outcome_1": 235,
+      "Outcome_1": 240,
       "Outcome_2": 235,
       "Section": 2,
       "Storyline": 3,
-      "NumChar": 63
+      "NumChar": 23
     },
     {
       "Scene_lab": 235,
-      "Story": "He’s out cold.",
+      "Story": "“Hey! Bernard!” Tapping on the glass, you hope to get some response.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3280,11 +3280,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 3,
-      "NumChar": 14
+      "NumChar": 69
     },
     {
       "Scene_lab": 236,
-      "Story": "You peer around the empty dome. Seems to be an early version of the simulation-style rooms August built.",
+      "Story": "He’s lying silently on the floor. You can’t tell if he’s dead.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3296,7 +3296,7 @@ var story = {
     },
     {
       "Scene_lab": 237,
-      "Story": "Another guy appears at your side and holds the book out to you.",
+      "Story": "You peer around the empty dome. Seems to be an early version of the simulation-style rooms August built.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3304,11 +3304,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 3,
-      "NumChar": 64
+      "NumChar": 94
     },
     {
       "Scene_lab": 238,
-      "Story": "“I’m sorry – I know he was your friend,” he says.",
+      "Story": "A man appears at your side and holds the book out to you–the man that Bernard had gestured to.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3316,11 +3316,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 3,
-      "NumChar": 49
+      "NumChar": 82
     },
     {
       "Scene_lab": 239,
-      "Story": "You take it, nodding. He exits.",
+      "Story": "“I’m sorry – I know he was your friend,” he says. You take it, nodding. He exits.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3328,7 +3328,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 3,
-      "NumChar": 32
+      "NumChar": 23
     },
     {
       "Scene_lab": 240,
@@ -3368,7 +3368,7 @@ var story = {
     },
     {
       "Scene_lab": 243,
-      "Story": "The guy wears a blank expression, making his way to the other corner of the dome.",
+      "Story": "Bernard is already on his feet. He wears a blank expression, making his way to the other corner of the dome.Then, he smiles down at something.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3376,11 +3376,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 3,
-      "NumChar": 82
+      "NumChar": 143
     },
     {
       "Scene_lab": 244,
-      "Story": "Then, he smiles down at something.",
+      "Story": "The kid’s bedroom flickers in and out again, and when it flashes you can see the kid laughing at him.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3388,11 +3388,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 2,
       "Storyline": 3,
-      "NumChar": 34
+      "NumChar": 23
     },
     {
       "Scene_lab": 245,
-      "Story": "The kid’s bedroom flickers in and out again, and when it flashes you can see the kid laughing at him.",
+      "Story": "When it’s gone, he’s just smiling at an empty room.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3404,7 +3404,7 @@ var story = {
     },
     {
       "Scene_lab": 246,
-      "Story": "When it’s gone, he’s just smiling at an empty room.",
+      "Story": "He’s mentally lost in the simulated memory he failed to complete. The idea creeps you out.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3416,7 +3416,7 @@ var story = {
     },
     {
       "Scene_lab": 247,
-      "Story": "He’s mentally lost in the simulated memory he failed to complete. The idea creeps you out.",
+      "Story": "Tucking the book under your arm, you retrace your steps back to the simulation exit and step back into the hallway.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3428,7 +3428,7 @@ var story = {
     },
     {
       "Scene_lab": 248,
-      "Story": "Tucking the book under your arm, you retrace your steps back to the simulation exit and step back into the hallway.",
+      "Story": "Squeezing your eyes shut, you sag to the floor, hugging the book to your chest.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3440,7 +3440,7 @@ var story = {
     },
     {
       "Scene_lab": 249,
-      "Story": "Squeezing your eyes shut, you sag to the floor, hugging the book to your chest.",
+      "Story": "The world inside was uncanny, like you’d been physically transported to some alternate reality.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3452,7 +3452,7 @@ var story = {
     },
     {
       "Scene_lab": 250,
-      "Story": "The world inside was uncanny, like you’d been physically transported to some alternate reality.",
+      "Story": "You wish you could run home and forget all about this. Just shut out the world, prop up a blank canvas you can’t afford and paint something blue.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3464,7 +3464,7 @@ var story = {
     },
     {
       "Scene_lab": 251,
-      "Story": "You wish you could run home and forget all about this.",
+      "Story": "But now that you’ve already gone to a room and are probably holding the very first clue, it seems stupid to give up the $100,000 reward.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3472,11 +3472,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 0,
-      "NumChar": 55
+      "NumChar": 147
     },
     {
       "Scene_lab": 252,
-      "Story": "Just shut out the world, prop up a blank canvas you can’t afford and paint something blue.",
+      "Story": "You’ve had a few setbacks in life, but you deserve a win.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3484,11 +3484,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 0,
-      "NumChar": 92
+      "NumChar": 23
     },
     {
       "Scene_lab": 253,
-      "Story": "But there is one thing that can change all that…and it’s the $100,000 reward.",
+      "Story": "Re-invigorated, you flip the book open and leaf through it.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3496,11 +3496,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 0,
-      "NumChar": 79
+      "NumChar": 138
     },
     {
       "Scene_lab": 254,
-      "Story": "You’ve had a few setbacks in life, but you deserve a win.",
+      "Story": "After dozens of pages of crowded text, a page with the blood-soaked title <i>The Scarlet Letter</i> appears. So this is where the actual book starts?",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -3512,7 +3512,7 @@ var story = {
     },
     {
       "Scene_lab": 255,
-      "Story": "Re-invigorated, you flip the book open and leaf through it.",
+      "Story": "You keep flipping through the pages, but slowing down a bit.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4064,7 +4064,7 @@ var story = {
     },
     {
       "Scene_lab": 301,
-      "Story": "Try to remind yourself that the horse, the storm, and the stable aren’t real. That you’re here to find a clue and earn that $100,000.",
+      "Story": "You try to remind yourself that the horse, the storm, and the stable aren’t real. That you’re here to find a clue and earn that $100,000.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4072,7 +4072,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 0,
-      "NumChar": 134
+      "NumChar": 138
     },
     {
       "Scene_lab": 302,
@@ -4224,7 +4224,7 @@ var story = {
     },
     {
       "Scene_lab": 314,
-      "Story": "You must still be in the second room, but why are you seeing his wife beyond the door?",
+      "Story": "But why are you seeing his wife beyond the door after coming out of the exit beyond the door?",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4232,11 +4232,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 1,
-      "NumChar": 87
+      "NumChar": 93
     },
     {
       "Scene_lab": 315,
-      "Story": "Maybe it’s another AI room? Or maybe you’re in a simulation within a simulation?",
+      "Story": "Maybe it’s another AI room? Did you just hop from one simulation room to another? Or maybe you’re in a simulation within a simulation?",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4244,7 +4244,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 1,
-      "NumChar": 81
+      "NumChar": 135
     },
     {
       "Scene_lab": 316,
@@ -4284,7 +4284,7 @@ var story = {
     },
     {
       "Scene_lab": 319,
-      "Story": "So the room is actually about ‘you’ working to construct a ‘room’ back then. As if things couldn't get any weirder.",
+      "Story": "So you are still in the second room, but the room is actually about ‘you’ working to construct a ‘room’ back then. As if things couldn't get any weirder.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4292,7 +4292,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 1,
-      "NumChar": 115
+      "NumChar": 153
     },
     {
       "Scene_lab": 320,
@@ -4488,7 +4488,7 @@ var story = {
     },
     {
       "Scene_lab": 336,
-      "Story": "“You didn’t lose anything. I’m standing right here. Sometimes, your familial flair for exaggeration really blows things out of proportion.”",
+      "Story": "“You didn’t lose anything. I’m standing right here. Sometimes, your flair for exaggeration really blows things out of proportion.”",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4496,7 +4496,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 1,
-      "NumChar": 139
+      "NumChar": 130
     },
     {
       "Scene_lab": 337,
@@ -4620,7 +4620,7 @@ var story = {
     },
     {
       "Scene_lab": 347,
-      "Story": "You run to the hallway and then from door-to-door, yanking them open in a frenzy.",
+      "Story": "You run to the hallway and then from door to door, yanking them open in a frenzy.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4656,7 +4656,7 @@ var story = {
     },
     {
       "Scene_lab": 350,
-      "Story": "The wedding room.",
+      "Story": "The wedding room. To be exact, it’s the wedding room in this copy of the house—all inside of a simulation room. The actual Grace must be trapped inside!",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4664,7 +4664,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 1,
-      "NumChar": 18
+      "NumChar": 153
     },
     {
       "Scene_lab": 351,
@@ -4704,7 +4704,7 @@ var story = {
     },
     {
       "Scene_lab": 354,
-      "Story": "The timer in the wedding room must’ve gone off, meaning the room reset with Grace still visiting the memory.",
+      "Story": "The timer in the wedding room must’ve gone off, meaning the room reset with the real-life Grace still visiting the memory.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4712,11 +4712,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 1,
-      "NumChar": 109
+      "NumChar": 122
     },
     {
       "Scene_lab": 355,
-      "Story": "You recognize the veiled old woman from the wedding – she’s August’s real wife, present day – she’s all human, no AI or tech.",
+      "Story": "So all those years ago, when Grace stormed off, she must have somehow over-stayed in a simulation room and gotten trapped.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4728,7 +4728,7 @@ var story = {
     },
     {
       "Scene_lab": 356,
-      "Story": "That’s why she seemed so out of place.",
+      "Story": "You recognize the veiled old woman from the wedding – she’s August’s real wife, present day – she’s all human, no AI or tech.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4736,11 +4736,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 1,
-      "NumChar": 39
+      "NumChar": 123
     },
     {
       "Scene_lab": 357,
-      "Story": "She’s a fully breathing, non-recorded person stuck in this house’s altered reality.",
+      "Story": "That’s why she seemed so out of place.She’s a fully breathing, non-recorded person stuck in this house’s altered reality.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4748,11 +4748,11 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 1,
-      "NumChar": 84
+      "NumChar": 23
     },
     {
       "Scene_lab": 358,
-      "Story": "If you stay in a room past its timer, you could be indefinitely lost in the memory.",
+      "Story": "If you stay in a room past its timer, you too could be indefinitely lost in the memory.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4760,7 +4760,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 1,
-      "NumChar": 84
+      "NumChar": 88
     },
     {
       "Scene_lab": 359,
@@ -4908,7 +4908,7 @@ var story = {
     },
     {
       "Scene_lab": 371,
-      "Story": "You trace your finger through the air, replicating the pattern you’d instinctually typed in the air earlier. Everyone freezes.",
+      "Story": "You trace your finger through the air, replicating the pattern you’d instinctively typed in the air earlier. Everyone freezes.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -4992,7 +4992,7 @@ var story = {
     },
     {
       "Scene_lab": 378,
-      "Story": "You close the door with a shaking hand, reflecting on your life choices – and the bizarre second room you just escaped.",
+      "Story": "You close the door with a shaking hand, reflecting on your life choices – and the bizarre second room, a house within a room, you just escaped.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -5000,7 +5000,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 1,
-      "NumChar": 120
+      "NumChar": 144
     },
     {
       "Scene_lab": 379,
@@ -5016,7 +5016,7 @@ var story = {
     },
     {
       "Scene_lab": 380,
-      "Story": "You start toward the front door then stop.",
+      "Story": "You start toward the front door, then stop.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -5024,7 +5024,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 1,
-      "NumChar": 43
+      "NumChar": 44
     },
     {
       "Scene_lab": 381,
@@ -5724,7 +5724,7 @@ var story = {
     },
     {
       "Scene_lab": 439,
-      "Story": "“Really, August?” huffs the boy.",
+      "Story": "“Really, August?” huffs August's son.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -5732,7 +5732,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 2,
-      "NumChar": 32
+      "NumChar": 37
     },
     {
       "Scene_lab": 440,
@@ -5904,7 +5904,7 @@ var story = {
     },
     {
       "Scene_lab": 454,
-      "Story": "You and August’s son turn to see a big glob of ice cream smatter the apron.",
+      "Story": "You and August’s son turn to see a big glob of ice cream splattered on the apron.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -5912,7 +5912,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 2,
-      "NumChar": 76
+      "NumChar": 82
     },
     {
       "Scene_lab": 455,
@@ -6000,7 +6000,7 @@ var story = {
     },
     {
       "Scene_lab": 462,
-      "Story": "Whatever he wanted back then, it seems like he finally tracked you down now, which means you were selected especially for this job.",
+      "Story": "Whatever he wanted back then, it seems like he's finally tracked you down now, which means you were selected especially for this job.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -6008,7 +6008,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 2,
-      "NumChar": 132
+      "NumChar": 134
     },
     {
       "Scene_lab": 463,
@@ -6048,7 +6048,7 @@ var story = {
     },
     {
       "Scene_lab": 466,
-      "Story": "The alley appears to be empty, but it’s the only place where he could have disappeared.",
+      "Story": "The alley appears to be empty, but it’s the only place where he could have disappeared to.",
       "Choice": "N",
       "Response_1": "Next",
       "Response_2": "NA",
@@ -6056,7 +6056,7 @@ var story = {
       "Outcome_2": "NA",
       "Section": 3,
       "Storyline": 2,
-      "NumChar": 88
+      "NumChar": 91
     },
     {
       "Scene_lab": 467,
