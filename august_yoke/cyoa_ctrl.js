@@ -8725,7 +8725,7 @@ prac_counterbalance = getRandomInt(8);
 assign_counter(prac_counterbalance);
 
 //counterbalancing: 7 added free-route stories 
-var mycounterbalance = 5 //Math.floor(Math.random() * 7) + 1; // get random integer between 1-7
+var mycounterbalance = 4 //Math.floor(Math.random() * 7) + 1; // get random integer between 1-7
 // EDIT: added all these variables below
 var routeIndex = 0;
 var choiceIndex = 0;
