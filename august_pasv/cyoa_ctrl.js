@@ -8724,7 +8724,7 @@ function assign_counter(prac_counterbalance){
 prac_counterbalance = 2;
 assign_counter(prac_counterbalance);
 //counterbalancing: 18 different free-route stories (3 per 3 storyline per 2 ending)
-var mycounterbalance = Math.floor(Math.random() * 4) + 1; // get random integer between 1-14
+var mycounterbalance = 1 //Math.floor(Math.random() * 4) + 1; // get random integer between 1-14
 // EDIT: added all these variables below
 var routeIndex = 0;
 var choiceIndex = 0;
