@@ -10553,7 +10553,9 @@ function SPR_buttonRecorder(choice_click) {
         var over = (Date.now() - startTime) % TR;
         var pad_green = (TR - over) % TR;
         console.log(pad_green)
-      }
+      }else{
+        var pad_green = 0;
+      };
       //selected element change colours (white highlight top item)
       if (choice_click==1){
         $("#Button_1").css("color", "black");
