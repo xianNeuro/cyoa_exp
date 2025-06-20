@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Sirens of Grantham Hill</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    #container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px;
+    }
+    #story {
+      font-size: 1.5em;
+      white-space: pre-wrap;
+      margin-bottom: 30px;
+    }
+    #prompt {
+      font-size: 1em;
+      color: #777;
+      position: absolute;
+      bottom: 40px;
+      width: 100%;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    textarea {
+      width: 100%;
+      height: 300px;
+      margin-top: 20px;
+      font-size: 1em;
+    }
+    .hidden {
+      display: none;
+    }
+    .question {
+      text-align: left;
+      margin-top: 20px;
+    }
+    .question label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .question select {
+      width: 100%;
+      padding: 8px;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="story"></div>
+    <button id="startBtn">Start</button>
+    <button id="submitQuizBtn" class="hidden">Submit Answers</button>
+    <div id="prompt" style="display: none;">[Press Enter to continue]</div>
+    <div id="quiz" class="hidden">
+      <h2>Comprehension Questions</h2>
+    </div>
+  </div>
+
+  <script>
+    const storyDiv = document.getElementById('story');
+    const prompt = document.getElementById('prompt');
+    const startBtn = document.getElementById('startBtn');
+    const submitQuizBtn = document.getElementById('submitQuizBtn');
+    const quizDiv = document.getElementById('quiz');
+    let storyDone = false;
+
+    const lines = [
+      "Nico first heard the sirens on a Tuesday.",
+      "He was walking home past Grantham Hill—the overgrown slope where the old water plant sat behind rusting fences—when the sound cut through the air: one long blare, then three short bursts.",
+      "It happened again the next day. Same time. 4:00 p.m. sharp.",
+      "No one else seemed to notice. No one talked about it. So Nico told Iris.",
+      "“I’ve seen people go in there,” she said. “They never come back. Or they do, and they’re obsessed with water bottles.”",
+      "Nico blinked. “You’re not kidding?”",
+      "“Dead serious.”",
+      "That weekend, they met at the edge of the woods. Nico brought binoculars. Iris brought a flashlight and a taser her cousin wouldn’t miss.",
+      "At 3:59 p.m., a tall figure in a trench coat approached the water plant. He typed something on a keypad and walked inside.",
+      "Then the sirens blared again.",
+      "“I told you,” Nico whispered.",
+      "The next day, they brought Finn.",
+      "He was skeptical—until he saw the man enter and heard the sirens for himself.",
+      "“This is insane,” Finn said. “We’ve lived here our whole lives. How is no one talking about this?”",
+      "“Let’s go in,” Iris said.",
+      "“What?!” Nico and Finn said together.",
+      "“I mean, investigate,” she corrected. “Come on. Don’t you want to know?”",
+      "So they made a plan.",
+      "Monday: mapped the fence. Found a spot where a tree had fallen over it.",
+      "Tuesday: used a shiny kite to distract the security camera.",
+      "Wednesday: snuck in.",
+      "Inside, the plant was still powered. Red emergency lights lit the hallways. A low buzzing came from somewhere below.",
+      "They found a stairwell. The sound got louder.",
+      "Downstairs, they found a locked metal door labeled “CHAMBER 4B – DO NOT ENTER.”",
+      "They entered.",
+      "At the center of the room was a glowing tank. Floating inside was a human-shaped figure—bald, pale, and covered in weird bumps. Its eyes opened.",
+      "Nico nearly screamed.",
+      "Beside the tank was a file cabinet. Iris grabbed a folder. Inside were photos, names, and memos.",
+      "One said:",
+      "“Subject 431 shows high stress response to peach stimuli. Recommend containment until Phase III.”",
+      "“Peach stimuli?” Finn whispered.",
+      "Just then, a speaker crackled above.",
+      "“Intruders in Sector 4B. Remain still. Security is on the way.”",
+      "They ran.",
+      "Back up the stairs. Through the hall. Out the fence.",
+      "They didn’t stop until they were safe in Nico’s garage.",
+      "The next two days, none of them spoke about it. Then Iris texted:",
+      "“Meet at 6 p.m. I’m done keeping this quiet.”",
+      "They met behind the diner. Iris brought printed files and a map. Finn had a USB with photos.",
+      "They walked into that night’s town hall meeting, sat in the back, and waited.",
+      "When public comment opened, Iris stood.",
+      "“My name is Iris Lopez. We need to talk about the Grantham Hill facility.”",
+      "The mayor raised an eyebrow. “Grantham what?”",
+      "Iris handed over the files and photos.",
+      "The mayor flipped through them and sighed. “Oh boy. It’s that time of year again.”",
+      "Nico leaned forward. “What do you mean?”",
+      "The mayor turned on her mic.",
+      "“Grantham Hill isn’t a government facility. It was converted five years ago into a student-run acting center by the local arts college. It’s part of their immersive storytelling program.”",
+      "Finn’s mouth dropped open.",
+      "“The sirens?” Nico asked.",
+      "“Sound effects for their games,” the mayor said.",
+      "“The guy in the tank?”",
+      "“Jeremy. He’s a theater major. Really into sci-fi.”",
+      "“The memo about peach reactions?”",
+      "“Totally fake,” she said. “Each group writes their own storylines.”",
+      "“But the files—”",
+      "“Prop documents,” she said with a chuckle. “You kids just wandered into a student LARP set.”",
+      "Outside, the three of them stood in stunned silence.",
+      "“So…” Finn said slowly, “we didn’t uncover a secret lab.”",
+      "“Nope,” Iris said.",
+      "“We broke into someone’s drama club project,” Nico groaned.",
+      "Then Iris started to laugh.",
+      "“I seriously thought we found a government experiment,” she said, wiping her eyes. “I almost sent those files to the press!”",
+      "Nico shook his head. “I screamed at an actor in a fish tank.”",
+      "Finn pulled out his notebook. “Still writing this down. Future historians will need to know.”",
+      "--- The End ---"
+    ];
+    const questions = [
+      { q: "What sound did Nico hear each day?", options: ["Two long blares", "Train horn", "One long and three short sirens", "Three short sirens"], answer: 2 },
+      { q: "Who did Nico talk to first?", options: ["The mayor", "Iris", "Finn", "His cousin"], answer: 1 },
+      { q: "What was odd about the people who entered the plant?", options: ["They changed careers", "They obsessed over water bottles", "They lost hair", "They screamed often"], answer: 1 },
+      { q: "How did they distract the camera?", options: ["With a flashlight", "With a drone", "With a shiny kite", "With smoke"], answer: 2 },
+      { q: "What was in the glowing tank?", options: ["An alien", "A man in costume", "A robot", "A glowing orb"], answer: 1 },
+      { q: "What did the memo mention?", options: ["Fear of loud sounds", "Stress from peach stimuli", "Aversion to sunlight", "Obsession with metal"], answer: 1 },
+      { q: "How did they escape the plant?", options: ["Through tunnels", "Through the roof", "Back upstairs and out the fence", "With security help"], answer: 2 },
+      { q: "Where did they present their findings?", options: ["Police station", "School", "Town hall", "News station"], answer: 2 },
+      { q: "What was the mayor's explanation?", options: ["A cover-up", "A drama club project", "A science experiment", "A museum exhibit"], answer: 1 },
+      { q: "Who was Jeremy?", options: ["A scientist", "A government agent", "A theater major", "A sound technician"], answer: 2 }
+    ];
+
+    let index = 0;
+    let wordSpeeds = [];
+    let answers = [];
+
+    // Updated instruction-a
+    storyDiv.innerHTML = `In the following section, you will read a story at your own pace, <b>hitting 'Enter'</b> to proceed to the next sentence.<br>
+    Within your comfortable reading speed, please go as fast as possible while comprehending what's happening in the story.<br>
+    Your memory for the story will be tested afterwards and your reading speed will be recorded.<br>
+    Overall, both <b>reading speed</b> and <b>memory for the story contents/details</b> matter.<br>
+    When you are ready, please press <b>Start</b> to begin reading.`;
+
+    startBtn.addEventListener('click', () => {
+      storyDiv.textContent = '';
+      startBtn.style.display = 'none';
+      showNextLine();
+      prompt.style.display = 'block';
+      lastTime = performance.now();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && !storyDone) {
+        showNextLine();
+      }
+    });
+
+    function showNextLine() {
+      if (index < lines.length) {
+        prompt.style.display = 'none';
+        const now = performance.now();
+        if (index > 0) {
+          const time = (now - lastTime) / 1000;
+          const words = lines[index - 1].split(/\s+/).length;
+          wordSpeeds.push({ index, words, time, speed: (words / time).toFixed(2) });
+        }
+        storyDiv.textContent = lines[index++];
+        lastTime = now;
+      } else {
+        prompt.style.display = 'none';
+        storyDone = true;
+        showQuestions();
+      }
+    }
+
+    function showQuestions() {
+      storyDiv.innerHTML = '';
+      questions.forEach((q, i) => {
+        const div = document.createElement('div');
+        div.className = 'question';
+        const label = document.createElement('label');
+        label.textContent = `${i + 1}. ${q.q}`;
+        const select = document.createElement('select');
+        select.id = `q${i}`;
+        const placeholder = document.createElement('option');
+        placeholder.textContent = "-- Select an answer --";
+        placeholder.value = "";
+        placeholder.disabled = true;
+        placeholder.selected = true;
+        select.appendChild(placeholder);
+
+        q.options.forEach((opt, j) => {
+          const option = document.createElement('option');
+          option.value = j;
+          option.textContent = opt;
+          select.appendChild(option);
+        });
+        div.appendChild(label);
+        div.appendChild(select);
+        quizDiv.appendChild(div);
+      });
+      quizDiv.classList.remove('hidden');
+      // Move the submit button to appear after the last question
+      submitQuizBtn.style.marginTop = '30px';
+      submitQuizBtn.style.marginBottom = '40px';
+      quizDiv.appendChild(submitQuizBtn);
+      submitQuizBtn.classList.remove('hidden');
+    }
+
+    submitQuizBtn.addEventListener('click', () => {
+      let correct = 0;
+      const results = questions.map((q, i) => {
+        const selected = parseInt(document.getElementById(`q${i}`).value);
+        const score = selected === q.answer ? 1 : 0;
+        correct += score;
+        return `${i + 1},"${q.q.replace(/"/g, "''")}",${selected},${q.answer},${score}`;
+      });
+      const avgAccuracy = (correct / questions.length).toFixed(2);
+      downloadData(results, avgAccuracy);
+    });
+
+    function downloadData(answers, accuracy) {
+      const rows = ["Index,Words,Seconds,WordsPerSecond"];
+      const avg = wordSpeeds.reduce((sum, d) => sum + parseFloat(d.speed), 0) / wordSpeeds.length;
+      const std = Math.sqrt(wordSpeeds.reduce((sum, d) => sum + Math.pow(parseFloat(d.speed) - avg, 2), 0) / wordSpeeds.length);
+      wordSpeeds.forEach(d => rows.push(`${d.index},${d.words},${d.time.toFixed(2)},${d.speed}`));
+      rows.push("\nAverageSpeed,,," + (wordSpeeds.reduce((a, b) => a + parseFloat(b.speed), 0) / wordSpeeds.length).toFixed(2));
+      rows.push(`Standard Deviation,,,${std.toFixed(3)}`);
+      rows.push("\nComprehensionResults:", "Q#,Question,Selected,Correct,Score");
+      answers.forEach(row => rows.push(row));
+      rows.push(`\nOverallAccuracy:,,,${accuracy}`);
+      const blob = new Blob([rows.join("\n")], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.setAttribute('href', url);
+      link.setAttribute('download', 'reading_recall_comprehension_data.csv');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
