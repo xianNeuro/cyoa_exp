@@ -66,11 +66,8 @@
   <div id="container">
     <div id="story"></div>
     <button id="startBtn">Start</button>
-    <button id="recallStartBtn" class="hidden">Begin Recall</button>
-    <button id="submitRecallBtn" class="hidden">Submit Recall</button>
     <button id="submitQuizBtn" class="hidden">Submit Answers</button>
     <div id="prompt" style="display: none;">[Press Enter to continue]</div>
-    <textarea id="recallBox" class="hidden" placeholder="Type your full story recall here..."></textarea>
     <div id="quiz" class="hidden">
       <h2>Comprehension Questions</h2>
     </div>
@@ -80,11 +77,9 @@
     const storyDiv = document.getElementById('story');
     const prompt = document.getElementById('prompt');
     const startBtn = document.getElementById('startBtn');
-    const recallStartBtn = document.getElementById('recallStartBtn');
-    const submitRecallBtn = document.getElementById('submitRecallBtn');
     const submitQuizBtn = document.getElementById('submitQuizBtn');
-    const recallBox = document.getElementById('recallBox');
     const quizDiv = document.getElementById('quiz');
+    let storyDone = false;
 
     const lines = [
       "Nico first heard the sirens on a Tuesday.",
@@ -187,7 +182,9 @@
     });
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') showNextLine();
+      if (e.key === 'Enter' && !storyDone) {
+        showNextLine();
+      }
     });
 
     function showNextLine() {
@@ -202,29 +199,11 @@
         storyDiv.textContent = lines[index++];
         lastTime = now;
       } else {
-        
-        // Updated instruction-b (inside showNextLine's else branch)
-        storyDiv.innerHTML = `Describe the <b>entire</b> story you read in as much detail as possible, from the very start to the story ending.<br>
-          If at any time you realize that you forgot to mention something earlier, go ahead and mention it at that time.<br>
-          <i>Completeness is more important than the order of the story</i>.<br>
-          Press <b>Begin Recall</b> to continue.<br>`;
-
-        recallStartBtn.classList.remove('hidden');
+        prompt.style.display = 'none';
+        storyDone = true;
+        showQuestions();
       }
     }
-
-    recallStartBtn.addEventListener('click', () => {
-      recallStartBtn.classList.add('hidden');
-      recallBox.classList.remove('hidden');
-      submitRecallBtn.classList.remove('hidden');
-      storyDiv.innerHTML = `<p>Type your recall below and click <b>Submit Recall</b> when done.</p>`;
-    });
-
-    submitRecallBtn.addEventListener('click', () => {
-      recallBox.classList.add('hidden');
-      submitRecallBtn.classList.add('hidden');
-      showQuestions();
-    });
 
     function showQuestions() {
       storyDiv.innerHTML = '';
@@ -269,17 +248,16 @@
         return `${i + 1},"${q.q.replace(/"/g, "''")}",${selected},${q.answer},${score}`;
       });
       const avgAccuracy = (correct / questions.length).toFixed(2);
-      downloadData(recallBox.value, results, avgAccuracy);
+      downloadData(results, avgAccuracy);
     });
 
-    function downloadData(recallText, answers, accuracy) {
+    function downloadData(answers, accuracy) {
       const rows = ["Index,Words,Seconds,WordsPerSecond"];
       const avg = wordSpeeds.reduce((sum, d) => sum + parseFloat(d.speed), 0) / wordSpeeds.length;
       const std = Math.sqrt(wordSpeeds.reduce((sum, d) => sum + Math.pow(parseFloat(d.speed) - avg, 2), 0) / wordSpeeds.length);
       wordSpeeds.forEach(d => rows.push(`${d.index},${d.words},${d.time.toFixed(2)},${d.speed}`));
       rows.push("\nAverageSpeed,,," + (wordSpeeds.reduce((a, b) => a + parseFloat(b.speed), 0) / wordSpeeds.length).toFixed(2));
       rows.push(`Standard Deviation,,,${std.toFixed(3)}`);
-      rows.push("\nRecallText:", recallText.replace(/\n/g, ' ').replace(/,/g, ';'));
       rows.push("\nComprehensionResults:", "Q#,Question,Selected,Correct,Score");
       answers.forEach(row => rows.push(row));
       rows.push(`\nOverallAccuracy:,,,${accuracy}`);
